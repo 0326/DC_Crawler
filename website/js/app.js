@@ -1,5 +1,4 @@
-var mApp = angular.module("myapp", ["ngRoute", "ngAnimate", 
-	"mControllers", "mDirectives", "mFilters", "mRoutes", "mServices"])
+var mApp = angular.module("myapp", ["ngRoute","mControllers", "mDirectives", "mFilters", "mRoutes", "mServices"])
 
 mApp.config(function($routeProvider) {
 	$routeProvider.when('/', {
