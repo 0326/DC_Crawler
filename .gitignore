@@ -1,0 +1,7 @@
+# directories
+.git
+website/bower_components/
+
+# file types
+*.psd
+CNAME

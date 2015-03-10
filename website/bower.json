@@ -1,0 +1,21 @@
+{
+  "name": "website",
+  "version": "1.0",
+  "homepage": "https://github.com/0326/DC_Crawler",
+  "authors": [
+    "0326 <winniringy@gmail.com>"
+  ],
+  "description": "DC_Crawler Front End",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic-ui": "~1.11.4",
+    "pure": "~0.6.0"
+  }
+}
