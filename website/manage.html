@@ -14,16 +14,16 @@
   </head>
   <body ng-app="myapp">
     <div class="container">
-      <div class="pure-menu pure-menu-horizontal">
-        <a href="#" class="pure-menu-heading pure-menu-link">BRAND</a>
+      <div class="pure-menu pure-menu-horizontal" style="display:none;">
+        <a href="#" class="pure-menu-heading pure-menu-link">登录</a>
         <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">我的订单</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">购物车</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">收藏本站</a></li>
         </ul>
       </div>
       <div class="pure-g">
-        <img class="pure-u-1-4" src="http://misc.360buyimg.com/lib/img/e/logo-201305.png"></img>
+        <img class="pure-u-1-4" src="img/title.png"></img>
         <form class="search-bar">
           <input type="text" placeholder="iphone8">
           <button class="">搜 索</button>
@@ -31,16 +31,8 @@
       </div>
     </div>
     <nav id="headernav" class="pure-menu pure-menu-horizontal menu-goods">
-      <ul class="pure-menu-list" ng-controller="menuCtrl">
-          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-              <a href="#" id="menu-items-all" class="pure-menu-link">全部商品分类</a>
-              <ul class="pure-menu-children">
-                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">EmailEmailEmailEmailEmail</a></li>
-                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">{{menus}}</a></li>
-                  <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
-                  
-              </ul>
-          </li>
+      <ul class="pure-menu-list">
+          <li class="pure-menu-item"><a href="#" id="menu-items-all" class="pure-menu-link">全部商品分类</a></li>
           <li class="pure-menu-item"><a href="#" class="pure-menu-link">首页</a></li>
           <li class="pure-menu-item"><a href="#" class="pure-menu-link">服装</a></li>
           <li class="pure-menu-item"><a href="#" class="pure-menu-link">食品</a></li>
@@ -48,19 +40,21 @@
       </ul>
     </nav>
     <div class="container">
-      <aside class="pure-u-5-24 menu-goods">
-        <div class="pure-menu custom-restricted-width  menu-goods">
-          <span class="pure-menu-heading">Yahoo Sites</span>
-
-          <ul class="pure-menu-list" ng-controller="menuCtrl">
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">Flickr</a></li>
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">{{menus}}</a></li>
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sports</a></li>
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">Finance</a></li>
-              <li class="pure-menu-heading">More Sites</li>
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">Games</a></li>
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
-              <li class="pure-menu-item"><a href="#" class="pure-menu-link">OMG!</a></li>
+      <aside class="pure-u-5-24 menu-goods" ng-controller="menuCtrl">
+        <div class="pure-menu custom-restricted-width pure-menu-allow-hover">
+          <ul class="pure-menu-list" ng-repeat=" lists in datalist">
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="#" id="menuLink1" class="pure-menu-link">{{lists.key.join("、")}}</a>
+                <ul class="pure-menu-children menu-children-second">
+                    <li class="pure-menu-item"  ng-repeat="list in lists.children">
+                      <a href="#" class="pure-menu-link">{{list.key.join("、")}} </a>
+                      <a href="#" class="menu-link-third" ng-repeat="i in list.children">
+                        {{i}}
+                      </a>
+                      
+                    </li>
+                </ul>
+            </li>
           </ul>
         </div>
       </aside>

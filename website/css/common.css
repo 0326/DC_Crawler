@@ -1,3 +1,15 @@
+/*reset for pure.css*/
+html,body{
+    font-family: "微软雅黑",Arial;
+}
+.pure-menu-has-children > .pure-menu-link::after{
+    position: absolute;
+    right: .1em;
+}
+aside .pure-menu-link,aside .pure-menu-heading{
+    padding: .3em .2em;
+}
+/*reset end*/
 .container{
     width: 1000px;
     margin: 0 auto;
@@ -25,9 +37,31 @@
 }
 
 #menu-items-all{
-    width: 210px;
+    width: 175px;
 }
 
+.menu-children-second{
+    background: #00938B; 
+    width: 400px;
+}
+.menu-children-second .pure-menu-link{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+}
+.menu-children-second .menu-link-third{
+    font-size: .8em;
+    text-decoration: none;
+    color: #fff;
+
+}
+.menu-children-second .menu-link-third::before{
+    content: "|";
+}
+.menu-children-second .menu-link-third:hover{
+    /*text-decoration: underline;*/
+    color: #f00;
+}
 .search-bar{
     padding: 3px;
     margin:10px auto 10px 10px;
@@ -59,7 +93,8 @@
     text-decoration: none;
 }
 .item-box:hover{
-    border: 1px solid #00B9AF;
+    /*border: 1px solid #00B9AF;*/
+    opacity: 0.8;
 }
 
 .item-box .p-thumb{
@@ -69,3 +104,4 @@
 .item-box .p-title,.item-box .p-price{
     margin-top:0;
 }
+
